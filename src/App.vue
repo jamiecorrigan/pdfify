@@ -1,11 +1,17 @@
 <template>
-  <div id="app">
-    In Development
-  </div>
+  <VApp>
+    <VMain>
+      <VContainer>
+        In Development
+      </VContainer>
+    </VMain>
+  </VApp>
 </template>
 
 <script>
 export default {
   name: 'App',
-}
+
+  data: () => ({}),
+};
 </script>
