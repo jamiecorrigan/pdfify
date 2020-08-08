@@ -9,7 +9,7 @@
         </VRow>
         <VRow>
           <VCol cols="12">
-            {{ images.map((f) => f.name) }}
+            <ImageList :images.sync="images" />
           </VCol>
         </VRow>
         <VRow>
@@ -26,11 +26,13 @@
 
 <script>
 import ImageInput from '@/components/ImageInput';
+import ImageList from '@/components/ImageList';
 
 export default {
   name: 'App',
   components: {
     ImageInput,
+    ImageList,
   },
   data: () => ({
     images: []
