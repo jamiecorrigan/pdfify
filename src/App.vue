@@ -4,7 +4,10 @@
       <VContainer>
         <VRow>
           <VCol cols="12">
-            <ImageInput @add="addImages" />
+            <ImageInput
+              @add="addImages"
+              @error="addImagesError = true"
+            />
           </VCol>
         </VRow>
         <VRow>
@@ -25,6 +28,22 @@
       </VContainer>
     </VMain>
     <ImagePreview :image.sync="previewImage" />
+    <VSnackbar
+      v-model="addImagesError"
+      color="error"
+      top
+    >
+      Failed to add images.
+      <template v-slot:action="{ attrs }">
+        <VBtn
+          text
+          v-bind="attrs"
+          @click="addImagesError = false"
+        >
+          Close
+        </VBtn>
+      </template>
+    </VSnackbar>
   </VApp>
 </template>
 
@@ -43,6 +62,7 @@ export default {
   data: () => ({
     images: [],
     previewImage: null,
+    addImagesError: true,
   }),
   methods: {
     addImages(newImages) {

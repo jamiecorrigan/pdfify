@@ -44,8 +44,8 @@ export default {
       try {
         const images = await Promise.all(this.files.map(this.getImage));
         this.$emit('add', images);
-      } catch (error) {
-        console.log(error);
+      } catch (_) {
+        this.$emit('error');
       }
 
       this.loading = false;
