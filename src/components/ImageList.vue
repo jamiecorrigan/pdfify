@@ -27,6 +27,7 @@
               <VBtn
                 color="primary"
                 icon
+                @click="$emit('preview', image)"
               >
                 <VIcon>
                   visibility
@@ -36,6 +37,7 @@
                 class="ml-1"
                 color="error"
                 icon
+                @click="deleteImage(index)"
               >
                 <VIcon>
                   delete
@@ -71,6 +73,11 @@ export default {
       set(val) {
         this.$emit('update:images', val)
       },
+    },
+  },
+  methods: {
+    deleteImage(index) {
+      this.images.splice(index, 1);
     },
   },
 };
