@@ -1,13 +1,7 @@
 <template>
   <VCard>
-    <VCardTitle>
-      Sort Images
-    </VCardTitle>
     <VCardText>
-      <Draggable
-        v-if="images.length"
-        v-model="computedImages"
-      >
+      <Draggable v-model="computedImages">
         <VCard
           v-for="(image, index) in images"
           :key="index"
@@ -47,9 +41,6 @@
           </VCardText>
         </VCard>
       </Draggable>
-      <template v-else>
-        No images loaded.
-      </template>
     </VCardText>
   </VCard>
 </template>

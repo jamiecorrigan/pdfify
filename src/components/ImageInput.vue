@@ -1,8 +1,5 @@
 <template>
   <VCard :loading="loading">
-    <VCardTitle>
-      Load Images
-    </VCardTitle>
     <VCardText>
       <div class="d-flex align-center">
         <VFileInput
